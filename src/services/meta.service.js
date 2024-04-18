@@ -8,7 +8,7 @@ export function Api(){
         baseURL: urlBackend,
         headers: {
             'Accept': 'application/json',
-            'Authorization': 'Bearer EAATZC0PN8ZCycBO8bn0FurkrRgNXE8zF8pyZCV8yQpD01mFaRZCba4XwZB2unFr9xmsw27C3kbGDel3XTqZACSPScx28sLe7bSvItReGYJTBZAEHaQ5fiT5kzp0YoobLsWmdZA3tEsZA0W27ia2ycysymJnnQwwF35Xf03iUngfQqtQUh9Dw5ooGi32pctsx8UtlTR5qQM8ftDaUnhkYLLZCIZD'
+            'Authorization': 'Bearer EAATZC0PN8ZCycBOZBZAbBuqid7Op9XNXYM9yolcwUalyGzACBj7RAxmTOtSrZC0KNkgYnDgl1tTV7i3uEfXhDvLBrLyICxIFaNOAaN8zrWxVTLqWU6wAzPO76Jf3AY6rC258sXOHMHzhu0DAJDV6X5ZB9MieTv8k4GjdNh5nAj7EdDgobSoOi74FZCzE5iZC25n1C8TgPu1FSrhzUtyDDIYZD'
         },
         timeout: 60000
     });

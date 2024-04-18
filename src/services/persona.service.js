@@ -11,9 +11,9 @@ export default {
         return Api().get(`/persona/${id}`);
     },
     modificar: (id, datos) => { 
-        return Api().put(`/categoria/${id}`, datos);
+        return Api().put(`/persona/${id}`, datos);
     },
     eliminar: (id) => {
-        return Api().delete(`/categoria/${id}`);
+        return Api().delete(`/persona/${id}`);
     }
 }
