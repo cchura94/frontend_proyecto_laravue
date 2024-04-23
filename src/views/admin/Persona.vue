@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="card">
         <!-- comentario -->
         <h1>Componente Persona</h1>
         <form @submit.prevent="funGuardarPersona()">
@@ -23,6 +23,14 @@
             <input type="submit">
 
         </form>
+
+        <DataTable :value="personas" tableStyle="min-width: 50rem">
+            <Column field="id" header="ID"></Column>
+            <Column field="nombres" header="Nombres"></Column>
+            <Column field="apellidos" header="Apellidos"></Column>
+            <Column field="direccion" header="DIrección"></Column>
+        </DataTable>
+
         <table border="1">
             <thead>
                 <tr>

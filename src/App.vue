@@ -1,5 +1,6 @@
 <template>
 
+<!--
 <router-link :to="{ name: 'Categoria'}">
   Categoria
 </router-link> |
@@ -14,6 +15,6 @@
 <router-link :to="{ name: 'Whatsapp'}">
   Whatsapp
 </router-link>
-
+-->
   <router-view></router-view>
 </template>
