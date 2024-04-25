@@ -4,7 +4,8 @@ import Persona from './../views/admin/Persona.vue'
 import Role from './../views/admin/Role.vue'
 import Mensaje from '../views/admin/Mensaje.vue';
 import Login from '../views/auth/Login.vue';
-import AppLayout from '../layout/AppLayout.vue'
+import AppLayout from '../layout/AppLayout.vue';
+import GestionUsuario from '../views/admin/Usuario.vue'
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -12,6 +13,7 @@ const router = createRouter({
         {
             path: '/admin',
             component: AppLayout,
+            meta: {requiredAuth: true},
             children: [
                 {
                     path: 'categoria',
@@ -35,6 +37,11 @@ const router = createRouter({
                     path: 'whatsapp',
                     name: 'Whatsapp',
                     component: Mensaje
+                },
+                {
+                    path: 'usuarios',
+                    name: 'Usuario',
+                    component: GestionUsuario
                 }
 
             ]

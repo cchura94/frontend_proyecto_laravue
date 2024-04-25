@@ -5,7 +5,7 @@
     <input type="text" v-model="credenciales.email">
     <br>
     <label for="">Ingrese Contraseña</label>
-    <input type="text" v-model="credenciales.password">
+    <input type="password" v-model="credenciales.password">
     <br>
     <button @click="funLogin()">Ingresar</button>
 </template>

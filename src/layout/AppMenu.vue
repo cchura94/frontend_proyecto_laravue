@@ -20,9 +20,9 @@ const model = ref([
         ]
     },
     {
-        label: 'Prime Blocks',
+        label: 'Usuarios',
         items: [
-            { label: 'Free Blocks', icon: 'pi pi-fw pi-eye', to: '/blocks', badge: 'NEW' },
+            { label: 'Usuarios', icon: 'pi pi-fw pi-eye', to: '/admin/usuarios', badge: 'NEW' },
             { label: 'All Blocks', icon: 'pi pi-fw pi-globe', url: 'https://www.primefaces.org/primeblocks-vue', target: '_blank' }
         ]
     },
