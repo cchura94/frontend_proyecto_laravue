@@ -1,11 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Categoria from './../views/admin/Categoria.vue'
+import Producto from './../views/admin/Producto.vue'
 import Persona from './../views/admin/Persona.vue'
 import Role from './../views/admin/Role.vue'
 import Mensaje from '../views/admin/Mensaje.vue';
 import Login from '../views/auth/Login.vue';
 import AppLayout from '../layout/AppLayout.vue';
 import GestionUsuario from '../views/admin/Usuario.vue'
+import Inicio from '../views/web/Inicio.vue' 
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -19,6 +21,12 @@ const router = createRouter({
                     path: 'categoria',
                     name: 'Categoria',
                     component: Categoria,
+                    meta: {requiredAuth: true}
+                },
+                {
+                    path: 'producto',
+                    name: 'Producto',
+                    component: Producto,
                     meta: {requiredAuth: true}
                 },
                 {
@@ -52,6 +60,11 @@ const router = createRouter({
             component: Login,
             meta: {redirectIfAuth: true}
         },
+        {
+            path: '',
+            name: Inicio,
+            component: Inicio
+        }
       
     ]
 

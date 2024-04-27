@@ -27,12 +27,13 @@ const model = ref([
         ]
     },
     {
-        label: 'Utilities',
+        label: 'Productos',
         items: [
-            { label: 'PrimeIcons', icon: 'pi pi-fw pi-prime', to: '/utilities/icons' },
-            { label: 'PrimeFlex', icon: 'pi pi-fw pi-desktop', url: 'https://www.primefaces.org/primeflex/', target: '_blank' }
+            { label: 'Categoria', icon: 'pi pi-fw pi-prime', to: '/admin/categoria' },
+            { label: 'Productos', icon: 'pi pi-fw pi-desktop', to: '/admin/producto' }
         ]
     },
+    /*
     {
         label: 'Pages',
         icon: 'pi pi-fw pi-briefcase',
@@ -157,6 +158,7 @@ const model = ref([
             }
         ]
     }
+    */
 ]);
 </script>
 
@@ -166,11 +168,13 @@ const model = ref([
             <app-menu-item v-if="!item.separator" :item="item" :index="i"></app-menu-item>
             <li v-if="item.separator" class="menu-separator"></li>
         </template>
+        <!--
         <li>
             <a href="https://www.primefaces.org/primeblocks-vue/#/" target="_blank">
                 <img src="/layout/images/banner-primeblocks.png" alt="Prime Blocks" class="w-full mt-3" />
             </a>
         </li>
+        -->
     </ul>
 </template>
 
