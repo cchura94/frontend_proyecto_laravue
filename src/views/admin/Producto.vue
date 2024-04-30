@@ -31,7 +31,7 @@
                 <Column field="nombre" header="Nombre" sortable style="min-width:16rem"></Column>
                 <Column header="Image">
                     <template #body="slotProps">
-                        <img :src="`https://primefaces.org/cdn/primevue/images/product/${slotProps.data.image}`" :alt="slotProps.data.image" class="border-round" style="width: 64px" />
+                        <Image :src="`http://127.0.0.1:8000/${slotProps.data.imagen}`" :alt="slotProps.data.image" class="border-round" width="64" preview />
                     </template>
                 </Column>
                 <Column field="precio" header="Precio" sortable style="min-width:8rem">
@@ -47,6 +47,7 @@
                 </Column>
                 <Column :exportable="false" style="min-width:8rem">
                     <template #body="slotProps">
+                        <Button icon="pi pi-image" class="mr-2" @click="editImagen(slotProps.data)" />
                         <Button icon="pi pi-pencil" outlined rounded class="mr-2" @click="editProduct(slotProps.data)" />
                         <Button icon="pi pi-trash" outlined rounded severity="danger" @click="confirmDeleteProduct(slotProps.data)" />
                     </template>
@@ -55,6 +56,20 @@
 
         
     </div>
+
+    <Dialog v-model:visible="dialogImagen" modal header="Edit Profile" :style="{ width: '30rem' }">
+        <span class="p-text-secondary block mb-5">Actualiza la imagen.</span>
+        <div class="flex align-items-center gap-3 mb-3">
+
+            
+            <FileUpload name="demo[]" customUpload @uploader="uploadImagen" :multiple="true" accept="image/*" :maxFileSize="1000000">
+                <template #empty>
+                    <p>Drag and drop files to here to upload.</p>
+                </template>
+            </FileUpload>
+
+        </div>
+    </Dialog>
 </template>
 
 <script setup>
@@ -66,6 +81,9 @@ const loading = ref(false);
 const totalRecords = ref(0);
 const buscar = ref('')
 const lazyParams = ref({page: 0})
+
+const producto = ref({});
+const dialogImagen = ref(false);
 
 const dt = ref();
 
@@ -100,5 +118,29 @@ const formatCurrency = (value) => {
 
 const exportCSV = () => {
     dt.value.exportCSV();
+};
+
+const editImagen = (prod) => {
+    producto.value = prod;
+    dialogImagen.value = true;
+}
+
+const seleccionarFiles = (event) => {
+    console.log(event.target.files)
+}
+
+const uploadImagen = async (event) => {
+    const file = event.files[0];
+    console.log(file)
+
+    // enviar archivo al servidor
+    let formData = new FormData();
+    formData.append("imagen", file);
+
+    await productoService.actualizarImagenProducto(producto.value.id, formData);
+
+    dialogImagen.value = false;
+    listarProductos();
+
 };
 </script>

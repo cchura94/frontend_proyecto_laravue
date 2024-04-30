@@ -9,6 +9,8 @@ import AppLayout from '../layout/AppLayout.vue';
 import GestionUsuario from '../views/admin/Usuario.vue'
 import Inicio from '../views/web/Inicio.vue' 
 
+import Departamento from './../views/admin/Departamento.vue'
+
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
     routes: [
@@ -50,6 +52,11 @@ const router = createRouter({
                     path: 'usuarios',
                     name: 'Usuario',
                     component: GestionUsuario
+                },
+                {
+                    path: 'departamento',
+                    name: 'Departamento',
+                    component: Departamento
                 }
 
             ]
