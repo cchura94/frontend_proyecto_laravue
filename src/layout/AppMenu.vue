@@ -14,9 +14,6 @@ const model = ref([
             { label: 'role', icon: 'pi pi-fw pi-id-card', to: '/admin/role' },
             { label: 'categoria', icon: 'pi pi-fw pi-check-square', to: '/admin/categoria' },
             { label: 'Persona', icon: 'pi pi-fw pi-bookmark', to: '/admin/persona' },
-            { label: 'Invalid State', icon: 'pi pi-fw pi-exclamation-circle', to: '/uikit/invalidstate' },
-            { label: 'Button', icon: 'pi pi-fw pi-mobile', to: '/uikit/button', class: 'rotated-icon' },
-            { label: 'Table', icon: 'pi pi-fw pi-table', to: '/uikit/table' }
         ]
     },
     {

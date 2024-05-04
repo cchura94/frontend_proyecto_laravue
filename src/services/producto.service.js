@@ -7,6 +7,9 @@ export default {
     guardar: function(datos){
         return Api().post('/producto', datos);
     },
+    guardarConImagen: function(formData){
+        return Api().post('/producto-con-imagen', formData);
+    },
     mostrar: function(id){
         return Api().get(`/producto/${id}`);
     },
