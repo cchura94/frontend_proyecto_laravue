@@ -6,13 +6,13 @@ import AppMenuItem from './AppMenuItem.vue';
 const model = ref([
     {
         label: 'Admin',
-        items: [{ label: 'Administración', icon: 'pi pi-fw pi-home', to: '/admin' }]
+        items: [{ label: 'Administración', icon: 'pi pi-fw pi-home', to: '/admin' },
+        { label: 'Perfil', icon: 'pi pi-fw pi-user', to: '/admin/perfil' }]
     },
     {
         label: 'Gestión ...',
         items: [
             { label: 'role', icon: 'pi pi-fw pi-id-card', to: '/admin/role' },
-            { label: 'categoria', icon: 'pi pi-fw pi-check-square', to: '/admin/categoria' },
             { label: 'Persona', icon: 'pi pi-fw pi-bookmark', to: '/admin/persona' },
         ]
     },
@@ -20,14 +20,20 @@ const model = ref([
         label: 'Usuarios',
         items: [
             { label: 'Usuarios', icon: 'pi pi-fw pi-eye', to: '/admin/usuarios', badge: 'NEW' },
-            { label: 'All Blocks', icon: 'pi pi-fw pi-globe', url: 'https://www.primefaces.org/primeblocks-vue', target: '_blank' }
-        ]
+               ]
     },
     {
         label: 'Productos',
         items: [
             { label: 'Categoria', icon: 'pi pi-fw pi-prime', to: '/admin/categoria' },
             { label: 'Productos', icon: 'pi pi-fw pi-desktop', to: '/admin/producto' }
+        ]
+    },
+    {
+        label: 'Pedidos',
+        items: [
+            { label: 'Nuevo Pedido', icon: 'pi pi-fw pi-prime', to: '/admin/pedido/nuevo' },
+            { label: 'Lista Pedidos', icon: 'pi pi-fw pi-desktop', to: '/admin/pedido' }
         ]
     },
     /*

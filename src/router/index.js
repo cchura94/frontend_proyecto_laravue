@@ -8,6 +8,8 @@ import Login from '../views/auth/Login.vue';
 import AppLayout from '../layout/AppLayout.vue';
 import GestionUsuario from '../views/admin/Usuario.vue'
 import Inicio from '../views/web/Inicio.vue' 
+import ListaPedido from '../views/admin/pedido/ListaPedido.vue'
+import NuevoPedido from '../views/admin/pedido/NuevoPedido.vue'
 
 import Departamento from './../views/admin/Departamento.vue'
 
@@ -57,6 +59,16 @@ const router = createRouter({
                     path: 'departamento',
                     name: 'Departamento',
                     component: Departamento
+                },
+                {
+                    path: 'pedido',
+                    name: 'ListaPedido',
+                    component: ListaPedido
+                },
+                {
+                    path: 'pedido/nuevo',
+                    name: 'NuevoPedido',
+                    component: NuevoPedido
                 }
 
             ]
