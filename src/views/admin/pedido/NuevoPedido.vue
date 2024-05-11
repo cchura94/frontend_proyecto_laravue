@@ -42,7 +42,7 @@
             <InputText
               v-model="buscar"
               placeholder="Buscar..."
-              @keyup.enter="listarProductos"
+              @keyup.enter="buscarCliente"
             />
           </IconField>
           <Button
@@ -101,6 +101,7 @@
         <Button type="button" label="Guardar" @click="guardarCliente()"></Button>
     </div>
 </Dialog>
+
 </template>
 
 <script setup>
@@ -159,6 +160,11 @@ async function guardarPedido(){
   carrito.value = []
 
 
+}
+
+const buscarCliente = async () => {
+  const {data} = await clienteService.buscar(buscar.value);
+  cliente_seleccionado.value = data
 }
 
 </script>

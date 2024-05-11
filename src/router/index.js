@@ -12,6 +12,9 @@ import ListaPedido from '../views/admin/pedido/ListaPedido.vue'
 import NuevoPedido from '../views/admin/pedido/NuevoPedido.vue'
 
 import Departamento from './../views/admin/Departamento.vue'
+import Perfil from './../views/admin/Perfil.vue'
+import ResetPass from './../views/auth/ResetPassword.vue'
+import CambiarPassword from './../views/auth/CambiarPassword.vue'
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -21,6 +24,10 @@ const router = createRouter({
             component: AppLayout,
             meta: {requiredAuth: true},
             children: [
+                {
+                    path: 'perfil',
+                    component: Perfil
+                },
                 {
                     path: 'categoria',
                     name: 'Categoria',
@@ -83,7 +90,18 @@ const router = createRouter({
             path: '',
             name: Inicio,
             component: Inicio
+        },
+        {
+            path: '/reset',
+            name: 'ResetPassword',
+            component: ResetPass
+        },
+        {
+            path: '/nuevo-password',
+            name: 'CambioPassword',
+            component: CambiarPassword
         }
+        
       
     ]
 

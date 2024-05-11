@@ -15,5 +15,9 @@ export default {
 
     funLogout: function(){
         return Api().post('/v1/auth/logout', {});
+    },
+
+    sendEmailResetPassword: function(datos){
+        return Api().post('reset-password', datos)
     }
 }

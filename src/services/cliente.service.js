@@ -15,5 +15,8 @@ export default {
     },
     eliminar: (id) => {
         return Api().delete(`/cliente/${id}`);
+    },
+    buscar: (q) => {
+        return Api().get(`/cliente/buscar?buscar=${q}`);
     }
 }
