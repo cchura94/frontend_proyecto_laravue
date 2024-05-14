@@ -32,7 +32,7 @@
                                 <Checkbox v-model="checked" id="rememberme1" binary class="mr-2"></Checkbox>
                                 <label for="rememberme1">Recordar</label>
                             </div>
-                            <a class="font-medium no-underline ml-2 text-right cursor-pointer" style="color: var(--primary-color)">¿Olvidaste tu Contraseña?</a>
+                            <a href="/reset" class="font-medium no-underline ml-2 text-right cursor-pointer" style="color: var(--primary-color)">¿Olvidaste tu Contraseña?</a>
                         </div>
                         <Button label="Ingresar" class="w-full p-3 text-xl" @click="funLogin()"></Button>
                     </div>

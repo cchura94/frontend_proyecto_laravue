@@ -19,5 +19,11 @@ export default {
 
     sendEmailResetPassword: function(datos){
         return Api().post('reset-password', datos)
+    },
+
+    cambiarPassword: function(datos){
+        return Api().post('/cambio-password', datos)
     }
+
+    
 }

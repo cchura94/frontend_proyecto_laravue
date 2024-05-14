@@ -2,6 +2,9 @@
     <div class="card">
         <h1>Gestión Usuarios</h1>
 
+        importar EXCEL
+        <input type="file" @change="seleccionarArchivoExcel" />
+
         <DataTable :value="lista_usuarios" tableStyle="min-width: 50rem">
             <template #header>
                 <div class="flex flex-wrap align-items-center justify-content-between gap-2">
@@ -135,6 +138,15 @@ const guardarUsuario = async () => {
 const editarUsuario = (data) => {
     usuario.value = data;
     visible.value = true
+}
+
+const seleccionarArchivoExcel = async (e) => {
+    console.log(e.target.files);
+    let formData = new FormData()
+    formData.append("file", e.target.files[0])
+    await userService.importarArchivoExcel(formData);
+
+    listarUsuarios()
 }
 
 

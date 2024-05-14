@@ -15,5 +15,9 @@ export default {
     },
     eliminar: function(id){
         return Api().delete(`/usuario/${id}`);
+    },
+    importarArchivoExcel: (fd) => {
+        return Api().post(`/user/excel/import`, fd);
+
     }
 }
