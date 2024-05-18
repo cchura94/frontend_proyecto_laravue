@@ -15,5 +15,8 @@ export default {
     },
     eliminar: function(id){
         return Api().delete(`/pedido/${id}`);
+    },
+    descargarPDF: function(id){
+        return Api().get(`/pedido/${id}/pdf-report`, {responseType: 'blob'});
     }
 }

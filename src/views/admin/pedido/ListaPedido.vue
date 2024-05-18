@@ -77,7 +77,7 @@
         <Button
           icon="pi pi-file"
           class="mr-2"
-          @click="editImagen(slotProps.data)"
+          @click="descargarPDF(slotProps.data)"
         />
         <Button
           icon="pi pi-pencil"
@@ -129,7 +129,7 @@ onMounted(() => {
 });
 
 const getPedidos = async () => {
-  const { data } = await pedidoService.funListar(1, 20);
+  const { data } = await pedidoService.funListar(1, 20, buscar.value);
   pedidos.value = data.data;
 };
 
@@ -142,4 +142,17 @@ const mostrarDetallePedido = (datos) => {
   detalle.value = datos;
   dialogDetalle.value = true;
 };
+
+const descargarPDF = async (pedido) => {
+  const respuesta = await pedidoService.descargarPDF(pedido.id);
+
+  const url = window.URL.createObjectURL(new Blob([respuesta.data], {type: 'application/pdf'}));
+
+  const link = document.createElement('a');
+  link.href = url;
+  link.setAttribute('download', 'recibo.pdf');
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
 </script>
